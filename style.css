@@ -1,474 +1,220 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-:root{
-      --primarycolor: #ff274b;  /* اللون الأساسي، يستخدم للعناوين المميزة والأزرار */
-    --secondarycolor: #f7bcf7; /* لون ثانوي، يستخدم للنصوص الثانوية */
-    --ligthcolor: #ffffff;    /* لون فاتح، يستخدم للنصوص الأساسية البيضاء */
-    --bgcolor-1: #171a1c;     /* لون خلفية داكن (أول) */
-    --bgcolor-2: #22282a; 
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* General Styles */
 body {
-  font-family: "Quicksand", sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-}
-
-ul {
-  list-style: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #2c2f33;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* Right-to-left for Arabic */
+    text-align: right;
 }
 
 .container {
-  max-width: 1100px;
-  margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Utility Classes */
-.btn {
-  display: inline-block;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #23272a;
+    border-bottom: 1px solid #36393f;
+}
+.hero-banner img {
+    width: 100px; /* تجعل الصورة تملأ 100% من عرض القسم الذي يحتويها */
+    height: 300px; /* يمكنك تغيير هذا الارتفاع حسب ما تراه مناسبًا (مثال: 400px, 250px) */
+    display: block; /* يزيل أي مسافات إضافية أسفل الصورة */
 }
 
-.btn-primary {
-  border: 1px solid #fff;
+/*
+    إذا كنت تستخدم كود JavaScript لتغيير الصور كما في الطلب السابق،
+    تأكد أن هذا الـ CSS مطبق على الـ `img` التي يتم تغيير الـ `src` الخاص بها.
+*/
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.btn-secondary,
-.btn-third:hover {
-  background: #383848;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover,
-.btn-third {
-  background: #e4b95b;
-}
-
-.primary-text {
-  color: #e4b95b;
-}
-
-/* Header Start */
-header {
-  height: 100vh;
-  background: url("./img/bb.webp") center center/cover no-repeat;
-  position: relative;
-}
-
-#navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  width: 100%;
-    position: fixed;
-      top: 0;
-        background-color: #333;
-         z-index: 999;
-           direction: rtl; /* من أجل اللغة العربية */
-
-
-
-
-}
-
-#navbar p {
-   font-size: 50px;
-  color:var(--primarycolor);
-  font-weight: bold;
-  margin-right: 40px;
-  
-}
-span{
-  color: var(--ligthcolor);
-}
-
-nav ul {
-  display: flex;
-  margin-right: 100px;
-}
-
-nav ul li a {
-    color: #fff;                     /* لون النص أبيض */
-    font-size: 25px;                 /* حجم الخط 25 بكسل */
-    font-weight: bold;               /* جعل الخط سميكًا */
-    border: 2px solid rgb(161, 30, 30); /* حد خارجي رمادي فاتح */
-    padding: 0.8rem 1.87rem;         /* مسافة داخلية حول النص في الزر */
-    border-radius: 30px;             /* جعل حواف الزر مستديرة جداً */
-    background-color: var(--primarycolor);
-    margin: 5px;
-}
-
-nav ul li a:hover {
-
-  background: transparent;         /* جعل الخلفية شفافة عند التحويم */
-    transition: 0.4s;   
-  }
-
-header .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 75%; /* Add exmple of greeen background */
-}
-
-header::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgb(0, 0, 0, 0.6);
-}
-
-header .content h1 {
-  font-size: 70px;
-  margin-top: 20px;
-  color: #fff;
-}
-
-header .content p {
-  color: #fff;
-  font-size: 30px;
-  margin: 20px 0 40px;
-}
-head .content p2{
-  color: var(--ligthcolor);
-}
-
-header * {
-  z-index: 10;
-}
-.content a{
-  font-size: 30px;
-  color:var(--ligthcolor);
-  background-color: rgb(2, 2, 38);
-}
-
-/* Header End */
-
-/* About Start */
-#about {
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bgcolor-1);
-}
-
-
-#about .title,
-#offers .title,
-#menu .title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-#about h2,
-#offers h2,
-#menu h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-
-#about h2 {
-  color: #918c8c;
-  font-size: 50px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-#about .title p {
-  font-weight: 600;
-  font-size: 30px;
-  color:rgb(230, 219, 207);
-  font-weight: bold;
-}
-
-#about .about-content {
-  display: flex;
-  justify-content: space-between;
-}
-
-#about .about-content p {
-  line-height: 1.6;
-  color: rgb(230, 219, 207);
-  font-weight: 500;
-  font-size: 30px;
- position: absolute;
-  right:10px ;
-
-  position: relative;
-  top: 0px;
-  margin-bottom: 20px;
-}
-
-#about img {
-  width: 300px;
-}
-
-#about .about-content a {
-  margin-top: 2rem;
-}
-/* About End */
-/* Offers Section start */
-.title p{
-  font-size: 30px;
-  font-weight: bold;
-}
-.title h2{
-  margin-top: 10px;
-}
-.offers-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-.offer-item {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.offer-item:hover{
-  transform: scale(1.2);
-}
-
-.offer-item img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.offer-item h3 {
-  font-size: 25px;
-  margin-bottom: 8px;
-  color: #222;
-}
-
-.offer-item p {
-  font-size: 20px;
-  color: #555;
-}
-
-/* Offers Section end */
-
-
-
-
-/* Contact Section start */
-#contact {
-  background: #f4f2ed;
-  padding: 5rem 0;
-}
-
-#contact .container {
-  max-width: 900px;
-}
-
-#contact .contact-content {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-#contact .contact-info {
-  width: 50%;
-}
-
-#contact .contact-info div {
-  margin: 30px 0;
-  line-height: 1.7;
-}
-
-#contact .contact-info h3 {
-  font-size: 28px;
-  color: #383848;
-  margin-bottom: 10px;
-}
-
-#contact .contact-info p {
-  color: #9a9a9a;
-}
-
-#contact .contact-info p i {
-  color: #e4b95b;
-  margin-right: 5px;
-}
-
-#contact .contact-info a i {
-  color: #fff;
-  background: #383848;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 50%;
-}
-
-#contact .contact-info a i:hover {
-  background-color: #e4b95b;
-  color: #383848;
-}
-
-form {
-  width: 50%;
-}
-
-form input,
-textarea {
-  display: block;
-  width: 100%;
-  padding: 20px 15px;
-  margin: 20px 0;
-  border: none;
-  background-color: #e3e2dd;
-}
-
-form input:focus,
-textarea:focus {
-  outline: none;
-}
-
-form button {
-  color: #fff;
-}
-
-/* Contact Section End */
-/* Footer Start */
-#footer {
-  background-color: #383848;
-  text-align: center;
-  color: #fff;
-  padding: 15px 0;
-  font-size: 14px;
-}
-/* Footer End */
-
-/* Responsiveness */
-/* Medium Screen + Tablet */
-@media (max-width: 1000px) {
-  #navbar img {
-    margin-left: 20px;
-  }
-
-  nav ul {
-    margin-right: 20px;
-  }
-
-  nav ul li a {
-    padding: 10px;
-  }
-
-  header .content h1 {
-    font-size: 28px;
-  }
-
-  #about {
-    height: auto;
-    padding: 4rem 2rem;
-  }
-
-  #about .about-content p {
-    margin-right: 2rem;
-  }
-
-  #about img {
-    width: 250px;
-  }
-
-  #offers .offers-items img {
-    width: 150px;
-  }
-
-  #offers .offers-items h3 {
-    font-size: 18px;
-  }
-
-  #menu .menu-items {
+/* Hero Banner */
+.hero-banner img {
+    width: 700px;
+    margin: auto;
     display: block;
-  }
+}
 
-  #contact .contact-content {
-    flex-direction: column;
-  }
+/* ------------------------------------------------ */
+/* التعديلات الخاصة بشريط الإشعارات (Notification Bar) */
+/* ------------------------------------------------ */
+.notification-bar {
+    background-color: #1e1e24;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 90%;
+    font-size: 14px;
+    
+    /* الخصائص التالية هي المسؤولة عن المحاذاة في المنتصف تماماً باستخدام Flexbox */
+    display: flex;
+    justify-content: center; /* لمحاذاة العناصر في المنتصف أفقياً */
+    align-items: center;    /* لمحاذاة العناصر في المنتصف عمودياً */
+    min-height: 40px;       /* لتحديد ارتفاع أدنى للشريط */
+    padding: 10px 20px;     /* لإضافة مساحة داخلية */
+}
 
-  /* Mobile Devices */
-  @media (max-width: 600px) {
-    #navbar {
-      flex-direction: column;
+/* ------------------------------------------------ */
+
+/* Service Sections */
+.services, .additional-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.additional-services {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: #36393f;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid #4f545c;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-container img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+}
+
+.service-card p {
+    margin: 0;
+    color: #b9bbbe;
+    font-size: 14px;
+}
+
+/* Info Blocks */
+.info-blocks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    border-top: 1px solid #36393f;
+}
+
+.info-block {
+    text-align: center;
+    max-width: 250px;
+}
+
+.info-icon {
+    font-size: 50px;
+    color: #7289da;
+    margin-bottom: 10px;
+}
+
+.info-block h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.info-block p {
+    margin: 0;
+    color: #b9bbbe;
+    font-size: 14px;
+}
+
+/* About Us Section */
+.about-us {
+    background-color: #36393f;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.about-us p {
+    margin: 0;
+    color: #dcddde;
+    font-size: 15px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #23272a;
+    border-top: 1px solid #36393f;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #b9bbbe;
+}
+
+/* Placeholder image styling for better visual */
+img[src*="placeholder"] {
+    background-color: #4f545c;
+    border-radius: 8px;
+}
+/* خصائص شريط الإشعارات */
+.notification-bar {
+    /* لإخفاء النص خارج نطاق الشريط */
+    overflow: hidden;
+    /* لتحديد الموضع النسبي للنص المتحرك */
+    position: relative;
+    /* لتحديد ارتفاع الشريط وتسهيل المحاذاة العمودية */
+    min-height: 40px;
+}
+
+/* خصائص النص المتحرك */
+.notification-bar p.bn {
+    /* لمنع النص من النزول لسطر جديد */
+    white-space: nowrap;
+    /* لوضعه بشكل مطلق داخل الشريط */
+    position: absolute;
+    /* للمحاذاة في المنتصف عمودياً */
+    top: 50;
+    transform: translateY(-50%);
+    
+    /* خصائص الحركة (Animation) */
+    animation: scrollText 20s linear infinite; /* يمكنك تغيير "20s" لزيادة أو تقليل السرعة */
+}
+
+/* تعريف الحركة (keyframes) */
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%); /* يبدأ النص من خارج الشاشة على اليمين */
     }
-
-    #navbar img {
-      margin-bottom: 20px;
+    100% {
+        transform: translateX(-100%); /* يمر النص وينتهي خارج الشاشة على اليسار */
     }
-
-    header .content h1 {
-      font-size: 18px;
-    }
-
-    header .content p {
-      font-size: 14px;
-    }
-
-    #about .about-content {
-      flex-direction: column;
-    }
-
-    #about .about-content a {
-      margin: 2rem 0;
-    }
-
-    #about img {
-      display: none;
-    }
-
-    #offers {
-      height: auto;
-      padding: 30px 10px;
-    }
-
-    #offers .offers-items {
-      flex-direction: column;
-    }
-
-    #menu .menu-items .menu-item {
-      margin: 20px 10px;
-    }
-
-    #daytime .daytime-items {
-      display: block;
-      height: auto;
-      padding: 30px 0;
-    }
-
-    #daytime .daytime-items .daytime-item {
-      margin-top: 20px;
-    }
-
-    #contact .contact-info,
-    form {
-      width: 80%;
-    }
-  }
 }
